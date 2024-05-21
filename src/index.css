@@ -7,10 +7,10 @@
     font-family: "Muli", sans-serif;
 }
 body{
-    background-color: #56b3f1;
+    background-color: #ffffff;
 }
 .navbar {
-    background-color: #56b3f1 !important;
+    background-color: #ffffff !important;
 }
 .navbar-brand {
     font-size: 1.9rem !important;
@@ -25,7 +25,7 @@ body{
     border-bottom: 1px solid #565387 ;
 }
 .navbar a:hover {
-    color: #ffffff !important;
+    color: #7c7777 !important;
 }
 
 @media (max-width: 991px) {
@@ -76,7 +76,7 @@ font-size: 24px;
 
 #header .btn-get-started:hover {
     background: #000000;
-    color: #fff;
+    color: #ffffff;
 }
 
 #header-img {
