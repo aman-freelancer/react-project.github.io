@@ -1,26 +1,39 @@
 import React from "react";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
-import Service from "./Service";
+import Products from "./Products";
 import Contact from "./Contact";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import { Routes, Route } from "react-router-dom";
+import Singleproduct from "./Singleproduct";
+import Cart from "./Cart";
+import ErrorPage from "./ErrorPage";
+import { GlobalStyle } from "./GlobalStyle";
+import { ThemeProvider } from "styled-components";
+import Header from "./components/Header";
+
+// Define your theme
+const theme = {
+  colors: {
+    bg: "#fff",
+  },
+};
+
 const App = () => {
   return (
-    <>
-    <Navbar />
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Header />
       <Routes>
-        <Route exact path="/" Component={Home} />
-        <Route exact path="/about" Component={About} />
-        <Route exact path="/service" Component={Service} />
-        <Route exact path="/contact" Component={Contact} />
-        {/* <Redirect to="/" /> */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/singleproduct/:id" element={<Singleproduct />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
-      <Footer />
-    </>
+    </ThemeProvider>
   );
 };
+
 export default App;

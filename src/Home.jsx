@@ -1,19 +1,18 @@
 import React from "react";
-import Web from "../src/images/app dev.jpeg";
-import { NavLink } from "react-router-dom";
-import Common from "./Common";
+import styled from "styled-components";
 
 const Home = () => {
   return (
-    <>
-      <Common 
-        name=" Grow your business with"
-        imgsrc={Web}
-        visit="/service"
-        btname="Get Started"
-      />
-    </>
+    <Wrapper className="test">
+      <p>home</p>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.section`
+  background-color: ${({ theme }) => theme.colors.bg};
+  width: 20rem;
+  height: 20rem;
+`;
 
 export default Home;
